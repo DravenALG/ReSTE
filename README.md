@@ -18,12 +18,15 @@ Binary Neural Networks (BNNs) attract great research enthusiasm in recent years 
 The core idea of our method is to use the power function to be the estimator of sign function, which is rational and capable of flexibly balancing the estimating error with the gradient stability. 
 
 The equavalent forward process of ReSTE is :
+
 <img src="figures/forward_equation.png" width="200px">
 
 The backward process of ReSTE is:
+
 <img src="figures/backward_equation.png" width="160px">
 
 We visualize the forward and backward processes of ReSTE as follow.
+
 <img src="figures/ReSTE.png" width="400px">
 
 
