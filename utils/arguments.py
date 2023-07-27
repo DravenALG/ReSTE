@@ -137,7 +137,6 @@ parser.add_argument(
     action='store_true',
     help='whether use warm up')
 
-
 parser.add_argument(
     '--estimator',
     default="ReSTE",

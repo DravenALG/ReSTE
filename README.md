@@ -2,7 +2,7 @@
 
 Official implement of ReSTE.  | [Paper]() | [Personal Homepage](https://dravenalg.github.io/).
 
-Xiao-Ming Wu, Dian Zheng, Zu-Hao Liu, Wei-Shi Zheng.
+Xiao-Ming Wu, Dian Zheng, Zu-Hao Liu, Wei-Shi Zheng*.
 
 Accepted at ICCV 2023!
 
@@ -103,8 +103,6 @@ We visualize the forward and backward processes of ReSTE as follow.
 
 |      Backbone      | Epoch | Batch | o_end | W/A | ACC (%) | Paper data|
 | :----------------: | :-------: |  :------: | :------: | :-------: | :------: | :------: |
-| **ResNet-18**  |  150   |  512  | 3 | 1 / 1 | aa |✘ |
-| **ResNet-18**  |  200   |  512  | 3 | 1 / 1 | aa |✘ |
 | **ResNet-18** |  200   |  750  | 3 | 1 / 1 | 60.43 |✘ |
 | **ResNet-18** |  250   |  750  | 3 | 1 / 1 | 60.88 |✔ |
 | **ResNet-18** |  250   |  750  | 3 | 1 / 32 | 67.40 |✔ |
@@ -117,7 +115,7 @@ We visualize the forward and backward processes of ReSTE as follow.
 
 ## Citation
 
-If you use our code or models in your research, please cite our paper with
+If you use our code or models in your research, please cite our paper with (will be update later)
 
 
 
