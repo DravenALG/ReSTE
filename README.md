@@ -15,15 +15,25 @@ Binary Neural Networks (BNNs) attract great research enthusiasm in recent years 
 
 ## Overall
 
-The core idea of our method is to use the power function to be the estimator of sign function, which is rational and capable of flexibly balancing the estimating error with the gradient stability. 
+The core idea of our method is that we present a new perspective to the BNNs training, regarding it as the equilibrium between the estimating error and the gradient stability. We also design two indicators to demonstrate the estimating error and the gradient stability.
+
+The estimating error is the difference between the sign function and the estimator, which can be evaluated by:
+
+<img src="figures/estimating_error.png" width="125px">
+
+The gradient stability is the divergence of the gradients of all parameters in an iteration update, which can be evaluated by:
+
+<img src="figures/stability.png" width="95px">
+
+In this view, we propose Rectified Straight Through Estimator (ReSTE for short), which is rational and capable of flexibly balancing the estimating error with the gradient stability. 
 
 The equavalent forward process of ReSTE is :
 
-<img src="figures/forward_equation.png" width="200px">
+<img src="figures/forward_equation.png" width="140px">
 
 The backward process of ReSTE is:
 
-<img src="figures/backward_equation.png" width="160px">
+<img src="figures/backward_equation.png" width="120px">
 
 We visualize the forward and backward processes of ReSTE as follow.
 
@@ -115,8 +125,7 @@ We visualize the forward and backward processes of ReSTE as follow.
 
 ## Citation
 
-If you use our code or models in your research, please cite our paper with (will be update later)
-
+If you use our code or models in your research, please cite our paper with [will be update later].
 
 
 

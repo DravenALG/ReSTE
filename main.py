@@ -202,6 +202,10 @@ def main():
             conv_modules.append(module)
 
     # training
+    if args.cal_ind:
+        total_estimating_error = 0
+        total_stability = 0
+
     for epoch in range(args.start_epoch + 1, args.epochs):
         time_start = datetime.datetime.now()
         # warm up
@@ -223,7 +227,7 @@ def main():
             module.epoch = epoch
 
         # train one epoch
-        train_loss, train_prec1, train_prec5, fitting_error, stability_var = train(
+        train_loss, train_prec1, train_prec5, estimating_error, stability_var = train(
             train_loader, model, criterion, epoch, optimizer)
 
         # adjust Lr
@@ -275,10 +279,13 @@ def main():
                              train_prec5=train_prec5, val_prec5=val_prec5))
 
         if args.cal_ind:
+            total_estimating_error = total_estimating_error + estimating_error
+            total_stability = total_stability + stability_var
+
             # logging the indicators of fitting error and gradient stability
-            logging.info('Fitting_Error {fitting_error:.3f} \t'
+            logging.info('Estimating_Error {estimating_error:.3f} \t'
                      'Gradient Stability {stability:.8f} \n'
-                         .format(fitting_error=fitting_error, stability=stability_var))
+                         .format(estimating_error=estimating_error, stability=stability_var))
 
     logging.info('*' * 50 + 'DONE' + '*' * 50)
     logging.info('\n Best_Epoch: {0}\t'
@@ -286,6 +293,11 @@ def main():
                  'Best_Loss {loss:.3f} \t'
                  .format(best_epoch + 1, prec1=best_prec1, loss=best_loss))
 
+    if args.cal_ind:
+        logging.info('\n Total Estimating_Error: {total_estimating_error:.4f} \t'
+                     'Total stability_var: {total_stability} \n'
+                     .format(total_estimating_error=total_estimating_error / args.epochs,
+                             total_stability=total_stability))
 
 
 # this function imitate a forward pass of training or testing, using training parameter
@@ -329,16 +341,16 @@ def forward(data_loader, model, criterion, epoch=0, training=True, optimizer=Non
 
         if training and args.cal_ind:
             if "vgg" in args.model:
-                fitting_error = get_fitting_error_vgg(model, args.o_end)
+                estimating_error = get_fitting_error_vgg(model, args.o_end)
             else:
-                fitting_error = get_fitting_error(model, args.o_end)
+                estimating_error = get_fitting_error(model, args.o_end)
 
             if "vgg" in args.model:
                 stability_var = get_stability_var_vgg(model)
             else:
                 stability_var = get_stability_var(model)
         else:
-            fitting_error = None
+            estimating_error = None
             stability_var = None
 
         # measure train time of current batch
@@ -358,7 +370,7 @@ def forward(data_loader, model, criterion, epoch=0, training=True, optimizer=Non
                 data_time=data_time, loss=losses,
                 top1=top1, top5=top5))
 
-    return losses.avg, top1.avg, top5.avg, fitting_error, stability_var
+    return losses.avg, top1.avg, top5.avg, estimating_error, stability_var
 
 
 def train(data_loader, model, criterion, epoch, optimizer):
