@@ -101,23 +101,25 @@ We visualize the forward and backward processes of ReSTE as follow.
 
 ### Model performance of ReSTE in CIFAR-10 dataset.
 
-|      Backbone      | Epoch | Batch | o_end | W/A | ACC (%) | Paper data|
+|      Backbone      | Epoch | Batch | o_end | W/A | Top-1 (%) | Paper data|
 | :----------------: | :-------: | :-------: | :------: | :-------: | :------: | :------: |
 | **ResNet-20**  |  1000   |  256  |  3  | 1 / 1 | 86.75 |✔ |
 | **ResNet-20**  |  1000   |  256  |  3  | 1 / 32 | 91.32 |✔ |
 | **ResNet-20 Bireal**  |  1000   |  256  |  3  | 1 / 1 | 87.92 |✔ |
-| **ResNet-18** |  1500   |  96  |  3  | 1 / 1 | 92.63 |✔ |
+| **ResNet-18** |  2000   |  96  |  3  | 1 / 1 | 92.63 |✔ |
 | **VGG small**  |  1000   |  256  |  3  | 1 / 1 | 92.55 |✔ |
 
 ### Model performance of ReSTE in imagenet dataset.
 
-|      Backbone      | Epoch | Batch | o_end | W/A | ACC (%) | Paper data|
-| :----------------: | :-------: |  :------: | :------: | :-------: | :------: | :------: |
-| **ResNet-18** |  200   |  750  | 3 | 1 / 1 | 60.43 |✘ |
-| **ResNet-18** |  250   |  750  | 3 | 1 / 1 | 60.88 |✔ |
-| **ResNet-18** |  250   |  750  | 3 | 1 / 32 | 67.40 |✔ |
-| **ResNet-34**  |  250   |  750  | 3 | 1 / 1 | 65.05 |✔ |
-| **ResNet-34**  |  250   |  750  | 3 | 1 / 32 | 70.74 |✔ |
+|      Backbone      | Epoch | Batch | o_end | W/A | Top-1 (%) | Top-5 (%) | Paper data|
+| :----------------: | :-------: |  :------: | :------: | :-------: | :------: |  :------: | :------: |
+| **ResNet-18** |  150   |  512  | 3 | 1 / 1 | 60.01 | 82.14 |✘ |
+| **ResNet-18** |  200   |  512  | 3 | 1 / 1 | - | - |✘ |
+| **ResNet-18** |  200   |  750  | 3 | 1 / 1 | 60.43 | 60.43 |✘ |
+| **ResNet-18** |  250   |  750  | 3 | 1 / 1 | 60.88 | 82.59 |✔ |
+| **ResNet-18** |  250   |  750  | 3 | 1 / 32 | 67.40 | 87.20 |✔ |
+| **ResNet-34**  |  250   |  750  | 3 | 1 / 1 | 65.05 | 85.78 |✔ |
+| **ResNet-34**  |  250   |  750  | 3 | 1 / 32 | 70.74 | 89.50 |✔ |
 
 - **NOTE 1:** To ensure the reproducibility, please refer to the training details we provided above (the parameters not provided use the default parameters in our code).
 - **NOTE 2:** If we enlarge the batch size or the training epochs, the performance will be further boosted.  We also report the results with different pairs of batch size and training epochs for comparison.

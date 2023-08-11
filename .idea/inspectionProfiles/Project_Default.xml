@@ -4,7 +4,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="34">
+          <list size="35">
             <item index="0" class="java.lang.String" itemvalue="safetensors" />
             <item index="1" class="java.lang.String" itemvalue="huggingface_hub" />
             <item index="2" class="java.lang.String" itemvalue="Dijkstar" />
@@ -39,6 +39,7 @@
             <item index="31" class="java.lang.String" itemvalue="torchaudio" />
             <item index="32" class="java.lang.String" itemvalue="cuda-python" />
             <item index="33" class="java.lang.String" itemvalue="scikit-learn" />
+            <item index="34" class="java.lang.String" itemvalue="sklearn" />
           </list>
         </value>
       </option>

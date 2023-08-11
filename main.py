@@ -294,7 +294,7 @@ def main():
                  .format(best_epoch + 1, prec1=best_prec1, loss=best_loss))
 
     if args.cal_ind:
-        logging.info('\n Total Estimating_Error: {total_estimating_error:.4f} \t'
+        logging.info('\n Mean Estimating_Error: {total_estimating_error:.4f} \t'
                      'Total stability_var: {total_stability} \n'
                      .format(total_estimating_error=total_estimating_error / args.epochs,
                              total_stability=total_stability))
