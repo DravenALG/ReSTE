@@ -63,7 +63,7 @@ def load(type='both', dataset='cifar10', data_path='/home/xiaoming/dataset', bat
             return train_loader, test_loader
         elif type == 'train':
             return train_loader
-        elif type == 'test':
+        elif type == 'val':
             return test_loader
 
     elif dataset == "imagenet":

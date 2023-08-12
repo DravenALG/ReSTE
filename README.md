@@ -43,11 +43,11 @@ We visualize the forward and backward processes of ReSTE as follow.
 ## Dependencies
 
 - Python 3.8
-- torch == 0.12.0
-- torchvision == 0.13.0
-- scipy == 1.7.3
+- torch == 2.0.1
+- torchvision == 0.15.2
+- scipy == 1.10.1
 
-- **NOTE:** The version is not strictly required and can be flexibly adjusted.
+- **NOTE:** The version is not strictly required and can be flexibly adjusted based on your CUDA.
 
 ## How to Run
 
@@ -84,11 +84,11 @@ We visualize the forward and backward processes of ReSTE as follow.
 	--o_end 3
 
 ### Other Arguments
-	--cal_ind, whether calculate the indicators of fitting error and gradient stability.
+	--cal_ind, whether calculate the indicators of fitting error and gradient stability. (not support for resume currently)
 	--a32, whether test the setting of 1W/32A.
 	--model, we can test full-precision models with "resnet20", "resnet 18", "vgg_small".
-	--resume, whether resume to latest checkpoint.
-	--evaluate, evaluate model on validation set.
+	--resume, whether resume to latest checkpoint. (set the same arguments as origin)
+	--evaluate, evaluate model on validation set. (set model and dataset to evaluate)
 	--seed, the random seed we used (default: 1234).
 	--weight_decay, weight decay of loss. (default: 1e-4).
 	--momentum, momentum value of sgd (default: 0.9).

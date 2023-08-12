@@ -191,8 +191,8 @@ def main():
 
         # compute o
         beta = 1 - torch.cos(ratio * math.pi * 0.5)  # cos
-        o = torch.tensor(1 + beta * (args.o_end - 1))
-        o_a = torch.tensor(1 + beta * (args.o_end - 1))
+        o = 1 + beta * (args.o_end - 1)
+        o_a = 1 + beta * (args.o_end - 1)
         return o, o_a
 
     # setup conv_modules.epoch
