@@ -123,6 +123,7 @@ We visualize the forward and backward processes of ReSTE as follow.
 
 - **NOTE 1:** To ensure the reproducibility, please refer to the training details we provided above (the parameters not provided use the default parameters in our code).
 - **NOTE 2:** If we enlarge the batch size or the training epochs, the performance will be further boosted.  We also report the results with different pairs of batch size and training epochs for comparison.
+- **NOTE 3:** It is better to train on single GPU to get better performance, since that when using multiple GPUs, the batch size on per GPU will decrease, which will affect the batch normalization. (Or maybe you can revise the code using a cross-GPU synchronized Batch Normalization to compensate it.)
 
 
 ## Citation
