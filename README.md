@@ -128,7 +128,14 @@ We visualize the forward and backward processes of ReSTE as follow.
 
 ## Citation
 
-If you use our code or models in your research, please cite our paper with [will be update later].
+If you use our code or models in your research, please cite our paper with
+
+	@article{wu2023estimator,
+	  title={Estimator Meets Equilibrium Perspective: A Rectified Straight Through Estimator for Binary Neural Networks Training},
+	  author={Wu, Xiao-Ming and Zheng, Dian and Liu, Zuhao and Zheng, Wei-Shi},
+	  journal={arXiv preprint arXiv:2308.06689},
+	  year={2023}
+	}
 
 
 
