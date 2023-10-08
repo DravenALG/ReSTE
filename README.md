@@ -1,6 +1,6 @@
 # Estimator Meets Equilibrium Perspective: A Rectified Straight Through Estimator for Binary Neural Networks Training
 
-Official implement of ReSTE.  | [Paper](https://arxiv.org/abs/2308.06689) | [Personal Homepage](https://dravenalg.github.io/).
+Official implement of ReSTE.  | [Paper](https://openaccess.thecvf.com/content/ICCV2023/html/Wu_Estimator_Meets_Equilibrium_Perspective_A_Rectified_Straight_Through_Estimator_for_ICCV_2023_paper.html) | [Personal Homepage](https://dravenalg.github.io/).
 
 Xiao-Ming Wu, Dian Zheng, Zu-Hao Liu, Wei-Shi Zheng*.
 
